@@ -1,0 +1,167 @@
+html
+{
+	height: 100%;
+	width: 100%;
+}
+body
+{
+	font-family: sans-serif;
+	background: black;
+	color: white;	
+	margin: 0;
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-evenly;
+}
+button
+{
+	display: inline;
+	background: black;
+	border: solid white;
+	color: white;
+	transition: all 0.4s ease-in-out;
+}
+button:hover
+{
+	transition: all 0.4s ease-in-out;
+	background: white;
+	color: black;
+}
+
+@media (orientation: portrait)
+{
+	body
+	{
+		flex-direction: column;
+	}
+	#box
+	{
+		font-size: 10vw;
+
+		width: 100%;
+		height: 45%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	#buttons
+	{
+		width: 100%;
+		height: 10%;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	button
+	{
+		font-size: 5vw;
+		min-width: 20vw;
+	}
+	#drawingArea
+	{
+		width: 100%;
+		height: calc(45% - 1px);
+		border-top: 1px solid white;
+		
+		position: relative;
+		display: flex;
+	}
+	canvas
+	{
+		width: 100%;
+		height: 100%;
+		align-self: stretch;
+
+		background-color: transparent;
+		z-index:1;
+	}
+	#writingPrompt
+	{
+		/*user-select: none;*/
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		font-size: 4vw;
+		z-index: 0;
+	}
+}
+
+@media (orientation: landscape)
+{
+	body
+	{
+		flex-direction: row;
+	}
+	#box
+	{
+		height: 90%;
+		flex-basis: 60vw;
+
+		font-size: 10vh;
+
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		text-align: center;
+	}
+	#buttons
+	{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 60%;
+		height: 10%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	button
+	{
+		font-size: 4vw;
+		min-width: 20vw;
+	}
+	#drawingArea
+	{
+		height: 100%;
+		flex-basis: calc(40% - 1px);
+
+		border-left: 1px solid white;
+
+		position: relative;
+
+		display: flex;
+	}
+	canvas
+	{
+		width: 100%;
+		height: 100%;
+		align-self: stretch;
+		
+		background-color: transparent;
+		z-index: 1;
+	}
+	#writingPrompt
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		z-index: 0;
+		
+		font-size: 2vw;
+	}
+}
+
+@media (min-aspect-ratio: 5/3)
+{
+	button
+	{
+	font-size: calc(1.666 * 4vh);
+	}
+}
